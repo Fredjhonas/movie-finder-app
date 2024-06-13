@@ -32,6 +32,7 @@ const SearchBar = ({ search, onChange }: Props) => {
             <></>
           )
         }
+        testID="search-input"
       />
     </VStack>
   );

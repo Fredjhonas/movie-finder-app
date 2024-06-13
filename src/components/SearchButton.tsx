@@ -16,6 +16,7 @@ const SearchButton = ({ openSearchbar, closeSearchbar, isOpenSearchbar }: Props)
         color: 'white',
       }}
       onPress={isOpenSearchbar ? closeSearchbar : openSearchbar}
+      testID="search-button"
     />
   );
 };

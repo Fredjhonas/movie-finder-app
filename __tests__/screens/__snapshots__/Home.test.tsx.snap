@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly with searchbar closed 1`] = `<Center />`;
+
+exports[`renders correctly with searchbar open 1`] = `<Center />`;
