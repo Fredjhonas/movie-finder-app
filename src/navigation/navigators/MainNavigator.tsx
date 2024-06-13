@@ -47,6 +47,7 @@ export default function MainNavigator() {
           headerTitleStyle: { color: 'white' },
           headerStyle: { backgroundColor: theme.colors.primary[800] },
           headerTintColor: 'white',
+          headerBackTitleVisible: false,
         }}
       />
     </MainStack.Navigator>
