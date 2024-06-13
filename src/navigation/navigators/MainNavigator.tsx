@@ -3,6 +3,7 @@ import { Heading, useTheme, View } from 'native-base';
 
 import SearchButton from '../../components/SearchButton';
 import { useSearchbar } from '../../hooks/useSearchbar';
+import DetailScreen from '../../screens/detail';
 import HomeScreen from '../../screens/home';
 
 const MainStack = createNativeStackNavigator();
@@ -36,6 +37,16 @@ export default function MainNavigator() {
               isOpenSearchbar={isOpen}
             />
           ),
+        }}
+      />
+      <MainStack.Screen
+        name="Detail"
+        component={DetailScreen as never}
+        options={{
+          headerTitle: () => <HeaderTitle />,
+          headerTitleStyle: { color: 'white' },
+          headerStyle: { backgroundColor: theme.colors.primary[800] },
+          headerTintColor: 'white',
         }}
       />
     </MainStack.Navigator>

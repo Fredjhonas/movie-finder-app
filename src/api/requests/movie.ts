@@ -31,3 +31,15 @@ export const getBySearch = async (search: string, page: number) => {
       throw error.response;
     });
 };
+
+export const getDetail = async (movieId: string) => {
+  const detailUrl = `/movie/${movieId}`;
+  const url = detailUrl + '?language=es' + apiKey;
+
+  return client
+    .get(url)
+    .then((res) => res.data)
+    .catch((error) => {
+      throw error.response;
+    });
+};

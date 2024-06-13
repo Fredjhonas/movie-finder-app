@@ -1,6 +1,5 @@
 import { Box, Center, Heading, Spinner, Text } from 'native-base';
 import { useEffect, useState } from 'react';
-import { View } from 'react-native';
 
 import MovieList from '../../components/MovieList';
 import SearchBar from '../../components/SearchBar';

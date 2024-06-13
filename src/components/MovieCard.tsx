@@ -5,13 +5,14 @@ import { Movie } from '../api/types';
 
 type Props = {
   movie: Movie;
+  goToDetail: (movieId: string) => void;
 };
 
 const screenWidth = Dimensions.get('screen').width;
 
-const MovieCard = ({ movie }: Props) => {
+const MovieCard = ({ movie, goToDetail }: Props) => {
   return (
-    <TouchableOpacity>
+    <TouchableOpacity onPress={() => goToDetail(movie.id.toString())}>
       <Box borderRadius="xl" borderColor="primary.400" borderStyle="dotted" borderWidth={2} m={1}>
         {movie.poster_path ? (
           <Image
