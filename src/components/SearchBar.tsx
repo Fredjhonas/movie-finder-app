@@ -7,7 +7,7 @@ type Props = {
 
 const SearchBar = ({ search, onChange }: Props) => {
   return (
-    <VStack space={2} width="100%" px="4" py="4">
+    <VStack space={2} width="100%" py="4">
       <Input
         size="lg"
         placeholder="Buscar películas..."
