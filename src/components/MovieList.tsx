@@ -1,18 +1,19 @@
 import { useNavigation } from '@react-navigation/native';
 import { FlatList } from 'native-base';
+import { RefreshControl } from 'react-native';
 
 import { Movie } from '../api/types';
 import MovieCard from './MovieCard';
 
 type Props = {
   movies: Movie[];
+  refreshMovies: () => void;
 };
 
-const MovieList = ({ movies }: Props) => {
+const MovieList = ({ movies, refreshMovies }: Props) => {
   const navigation = useNavigation();
 
   const goToDetail = (movieId: string) => {
-    console.log('🚀 ~ goToDetail ~ movieId:', movieId);
     navigation.navigate({
       name: 'Detail',
       params: { movieId },
@@ -25,6 +26,7 @@ const MovieList = ({ movies }: Props) => {
       data={movies}
       renderItem={({ item }) => <MovieCard movie={item} goToDetail={goToDetail} />}
       keyExtractor={(item) => item.id.toString()}
+      refreshControl={<RefreshControl refreshing={false} onRefresh={refreshMovies} />}
     />
   );
 };

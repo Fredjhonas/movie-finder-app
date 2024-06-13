@@ -18,6 +18,7 @@ const HomeScreen = () => {
   const isFetching = searchMovies.isFetching || popularMovies.isFetching;
   const hasSearchResults = searchMovies.movies.length > 0;
   const movies = hasSearchResults ? searchMovies.movies : popularMovies.movies;
+  const refreshMovies = hasSearchResults ? searchMovies.refetch : popularMovies.refetch;
 
   useEffect(() => {
     searchMovies.refetch();
@@ -54,7 +55,7 @@ const HomeScreen = () => {
             {hasSearchResults ? 'Resultados de la búsqueda' : 'Películas populares'}
           </Heading>
         </Box>
-        {movies.length > 0 && <MovieList movies={movies} />}
+        {movies.length > 0 && <MovieList movies={movies} refreshMovies={refreshMovies} />}
       </Center>
     </Center>
   );

@@ -15,7 +15,6 @@ export const useDetailMovie = (id: string) => {
 
   useEffect(() => {
     if (data) {
-      console.log('🚀 ~ useEffect ~ data:', data);
       setMovie(data);
     }
   }, [data]);
