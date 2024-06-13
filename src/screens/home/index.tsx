@@ -1,14 +1,12 @@
-import { Box, Center, Heading } from 'native-base';
+import { Center } from 'native-base';
+import { useState } from 'react';
+
+import SearchBar from '../../components/SearchBar';
+import { useSearchbar } from '../../hooks/useSearchbar';
 
 const HomeScreen = () => {
-  return (
-    <Center flex={1}>
-      <Box bg="brand.800" p={4} rounded="md">
-        <Heading size="md" color="white">
-          Welcome to NativeBase
-        </Heading>
-      </Box>
-    </Center>
-  );
+  const [search, setSearch] = useState('');
+  const { isOpen } = useSearchbar();
+  return <Center>{isOpen ? <SearchBar search={search} onChange={setSearch} /> : null}</Center>;
 };
 export default HomeScreen;

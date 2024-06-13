@@ -4,6 +4,7 @@ import React, { useEffect } from 'react';
 import SplashScreen from 'react-native-splash-screen';
 
 import queryClient from './src/api/queryClient';
+import { SearchbarProvider } from './src/hooks/useSearchbar';
 import AppNavigation from './src/navigation';
 import theme from './src/theme';
 
@@ -13,11 +14,13 @@ const App = () => {
   }, []);
 
   return (
-    <QueryClientProvider client={queryClient}>
-      <NativeBaseProvider theme={theme}>
-        <AppNavigation />
-      </NativeBaseProvider>
-    </QueryClientProvider>
+    <SearchbarProvider>
+      <QueryClientProvider client={queryClient}>
+        <NativeBaseProvider theme={theme}>
+          <AppNavigation />
+        </NativeBaseProvider>
+      </QueryClientProvider>
+    </SearchbarProvider>
   );
 };
 

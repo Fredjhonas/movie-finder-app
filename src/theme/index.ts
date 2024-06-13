@@ -1,7 +1,7 @@
 import { extendTheme } from 'native-base';
 
 const newColorTheme = {
-  brand: {
+  primary: {
     900: '#3E1424',
     800: '#5A1E38',
     700: '#7C2A4B',
